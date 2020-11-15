@@ -13,7 +13,7 @@ if (isset($_POST['nation'])) {
   // var_dump($_POST["nation"]);
   $controller = new controller($_POST["nation"]);
   $controller->generate_json_file();
-  header("Location: http://localhost:808/json_datas/" . $_SESSION['nation_name'] . ".json");
+  header("Location: http://localhost:7777/json_datas/" . $_SESSION['nation_name'] . ".json");
 }
 
 ?>
@@ -44,6 +44,8 @@ if (isset($_POST['nation'])) {
   <form action="" method="POST">
     <input type="text" name="nation" id="nation" />
     <button>submit</button>
+
+    <!-- <? echo phpinfo(); ?> -->
   </form>
 
   <script src="" async defer></script>

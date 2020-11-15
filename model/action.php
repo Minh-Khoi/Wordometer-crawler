@@ -15,7 +15,7 @@ class action
     $this->html_entities = htmlentities(file_get_contents($url));
 
     if (strpos($html_entities, "the requested webpage was not found")) {
-      die("Wrong Nation");
+      die("Wrong Nation! Data not found");
     }
 
     $this->set_basic_info($url);
@@ -38,6 +38,9 @@ class action
   private function set_basic_info($url)
   {
     $html_raw = file_get_html($url);
+	if (!$html_raw->find(".maincounter-number span")) {
+		die("Data not found");
+	}
     $this->data_ncov->cases = $html_raw->find(".maincounter-number span")[0]->innertext();
     $this->data_ncov->death = $html_raw->find(".maincounter-number span")[1]->innertext();
     $this->data_ncov->recovered = $html_raw->find(".maincounter-number span")[2]->innertext();
