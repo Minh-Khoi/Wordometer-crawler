@@ -13,7 +13,18 @@ if (isset($_POST['nation'])) {
   // var_dump($_POST["nation"]);
   $controller = new controller($_POST["nation"]);
   $controller->generate_json_file();
-  header("Location: http://localhost:7777/json_datas/" . $_SESSION['nation_name'] . ".json");
+  $file = ("json_datas/" . $_SESSION['nation_name'] . ".json");
+  if (!file_exists($file)) { // file does not exist
+    die('file not found');
+  } else {
+    header("Content-Disposition: attachment; filename=$file");
+  }
+  if ($_POST['download_or_see'] == "download") {
+    readfile($file);
+    die(file_get_contents($file));
+  } else {
+    header("Location: http://localhost:7777/json_datas/" . $_SESSION['nation_name'] . ".json");
+  }
 }
 
 ?>
@@ -42,7 +53,9 @@ if (isset($_POST['nation'])) {
 
   <h1>CHoose a nation</h1>
   <form action="" method="POST">
-    <input type="text" name="nation" id="nation" />
+    <input type="text" name="nation" id="nation" /> <br>
+    <input type="radio" name="download_or_see" id="download_or_see" value="download"> Download
+    <input type="radio" name="download_or_see" id="download_or_see" value="see"> See Result
     <button>submit</button>
 
     <!-- <? echo phpinfo(); ?> -->
