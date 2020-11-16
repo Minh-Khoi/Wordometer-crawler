@@ -21,6 +21,7 @@ class controller
     return $this->datas;
   }
 
+
   public function generate_json_file()
   {
 

@@ -48,6 +48,11 @@ if (isset($_POST['nation'])) {
     <!-- <? echo phpinfo(); ?> -->
   </form>
 
+  <h3>Click the button below to see the name of Nations, then copy one of them and paste to the form</h3>
+  <a href="controller/load_list_countries_controller.php">
+    <button>See Nations</button>
+  </a>
+
   <script src="" async defer></script>
 </body>
 

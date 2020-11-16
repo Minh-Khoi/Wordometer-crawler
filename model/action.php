@@ -5,16 +5,16 @@ require_once dirname(__FILE__, 2) . "/dependencies/simple_html_dom.php";
 
 class action
 {
-  private $data_ncov, $html_entities;
+  private $data_ncov, $html_entities, $countries_list;
   /**
    * action Class constructor.
    */
   public function __construct($url)
   {
+    // This attribute is an JSON object which is loaded as a result 
     $this->data_ncov = new country();
     $this->html_entities = htmlentities(file_get_contents($url));
-
-    if (strpos($html_entities, "the requested webpage was not found")) {
+    if (strpos($this->html_entities, "the requested webpage was not found")) {
       die("Wrong Nation! Data not found");
     }
 
@@ -38,9 +38,9 @@ class action
   private function set_basic_info($url)
   {
     $html_raw = file_get_html($url);
-	if (!$html_raw->find(".maincounter-number span")) {
-		die("Data not found");
-	}
+    if (!$html_raw->find(".maincounter-number span")) {
+      die("Data not found");
+    }
     $this->data_ncov->cases = $html_raw->find(".maincounter-number span")[0]->innertext();
     $this->data_ncov->death = $html_raw->find(".maincounter-number span")[1]->innertext();
     $this->data_ncov->recovered = $html_raw->find(".maincounter-number span")[2]->innertext();
