@@ -5,7 +5,10 @@ require_once dirname(__FILE__, 2) . "/dependencies/simple_html_dom.php";
 
 class load_countries_action
 {
-
+  /**
+   *  crawl the list of country name (the name can be add to url load the web page of that country)
+   *  Example: "viet-nam" instead of "Vietnam", "us" instead of "usa"
+   */
   public function get_countries_list($url)
   {
     $html_raw = file_get_html($url);

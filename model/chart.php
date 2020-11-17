@@ -8,6 +8,8 @@ class chart
 
   /**
    * chart Class constructor.
+   * create an object chart with attribute $title (cases, new cases, active cases, deaths, new death)
+   * and attribute $data is the number which are changing after each day
    */
   public function __construct($title, $xAxis, $data)
   {

@@ -7,7 +7,9 @@ class action
 {
   private $data_ncov, $html_entities, $countries_list;
   /**
-   * action Class constructor.
+   * action Class constructor. This class constructor will crawl the data source.
+   *  Convert it to data JSON and save it to attribute data_ncov. The controller will call this attribute 
+   * after it
    */
   public function __construct($url)
   {

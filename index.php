@@ -8,21 +8,22 @@ session_start();
 require_once dirname(__FILE__, 1) . "/controller/controller.php";
 require_once dirname(__FILE__, 1) . "/model/action.php";
 
-
+// isset($_POST['nation']) mean this page is loaded by form submiting 
+//(if isset($_POST['nation']) == false ) this page is loaded by URL
 if (isset($_POST['nation'])) {
-  // var_dump($_POST["nation"]);
   $controller = new controller($_POST["nation"]);
   $controller->generate_json_file();
-  $file = ("json_datas/" . $_SESSION['nation_name'] . ".json");
-  if (!file_exists($file)) { // file does not exist
+  $file_path = ("json_datas/" . $_SESSION['nation_name'] . ".json");
+  if (!file_exists($file_path)) { // file does not exist
     die('file not found');
   } else {
     header("Content-Disposition: attachment; filename=$file");
   }
+  // $_POST['download_or_see'] == "download"  mean the customer choose 'download'
   if ($_POST['download_or_see'] == "download") {
-    readfile($file);
-    die(file_get_contents($file));
-  } else {
+    readfile($file_path);
+    die(file_get_contents($file_path));
+  } else { // or they can choose to see on the browser
     header("Location: http://localhost:7777/json_datas/" . $_SESSION['nation_name'] . ".json");
   }
 }
@@ -53,7 +54,7 @@ if (isset($_POST['nation'])) {
 
   <h1>CHoose a nation</h1>
   <form action="" method="POST">
-    <input type="text" name="nation" id="nation" /> <br>
+    <input type="text" name="nation" id="nation" required /> <br>
     <input type="radio" name="download_or_see" id="download_or_see" value="download"> Download
     <input type="radio" name="download_or_see" id="download_or_see" value="see"> See Result
     <button>submit</button>
@@ -70,8 +71,3 @@ if (isset($_POST['nation'])) {
 </body>
 
 </html>
-
-
-<?php
-// $data = (new action("https://www.worldometers.info/coronavirus/country/us/"));
-// echo $data->data_ncov;
