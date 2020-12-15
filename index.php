@@ -21,8 +21,9 @@ if (isset($_POST['nation'])) {
   }
   // $_POST['download_or_see'] == "download"  mean the customer choose 'download'
   if ($_POST['download_or_see'] == "download") {
+    // die($file_path);
     readfile($file_path);
-    die(file_get_contents($file_path));
+    die();
   } else { // or they can choose to see on the browser
     header("Location: " . $_SERVER['HTTP_REFERER'] . "/json_datas/" . $_SESSION['nation_name'] . ".json");
   }

@@ -28,7 +28,8 @@ class controller
   /** Generate file <nation_name>.json. The file will be used to be seen on browser of downloaded*/
   public function generate_json_file()
   {
-    $fp = fopen(dirname(__FILE__, 2) . '/json_datas/' . $_SESSION['nation_name'] . '.json', 'w');
+    $path = dirname(__FILE__, 2) . '/json_datas/' . $_SESSION['nation_name'] . '.json';
+    $fp = fopen($path, 'w');
     fwrite($fp, json_encode($this->datas));
     fclose($fp);
   }

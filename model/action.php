@@ -57,14 +57,22 @@ class action
     $index_xAxis_begin = strpos($this->html_entities, "xAxis", $index_chart_begin);
     $xAxis_index_bracket_open = strpos($this->html_entities, '[', $index_xAxis_begin);
     $xAxis_index_bracket_close = strpos($this->html_entities, ']', $xAxis_index_bracket_open);
-    $string_xAxis = substr($this->html_entities, $xAxis_index_bracket_open + 1, $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1);
+    $string_xAxis = substr(
+      $this->html_entities,
+      $xAxis_index_bracket_open + 1,
+      $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1
+    );
     $string_xAxis = str_replace('&quot;', '', $string_xAxis);
     $array_xAxis = explode(',', $string_xAxis);
 
     $index_data_begin = strpos($this->html_entities, "data", $index_chart_begin);
     $data_index_bracket_open = strpos($this->html_entities, '[', $index_data_begin);
     $data_index_bracket_close = strpos($this->html_entities, ']', $data_index_bracket_open);
-    $string_data = substr($this->html_entities, $data_index_bracket_open + 1, $data_index_bracket_close - $data_index_bracket_open - 1);
+    $string_data = substr(
+      $this->html_entities,
+      $data_index_bracket_open + 1,
+      $data_index_bracket_close - $data_index_bracket_open - 1
+    );
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
@@ -83,14 +91,22 @@ class action
     $index_xAxis_begin = strpos($this->html_entities, "xAxis", $index_chart_begin);
     $xAxis_index_bracket_open = strpos($this->html_entities, '[', $index_xAxis_begin);
     $xAxis_index_bracket_close = strpos($this->html_entities, ']', $xAxis_index_bracket_open);
-    $string_xAxis = substr($this->html_entities, $xAxis_index_bracket_open + 1, $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1);
+    $string_xAxis = substr(
+      $this->html_entities,
+      $xAxis_index_bracket_open + 1,
+      $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1
+    );
     $string_xAxis = str_replace('&quot;', '', $string_xAxis);
     $array_xAxis = explode(',', $string_xAxis);
 
     $index_data_begin = strpos($this->html_entities, "data", $index_chart_begin);
     $data_index_bracket_open = strpos($this->html_entities, '[', $index_data_begin);
     $data_index_bracket_close = strpos($this->html_entities, ']', $data_index_bracket_open);
-    $string_data = substr($this->html_entities, $data_index_bracket_open + 1, $data_index_bracket_close - $data_index_bracket_open - 1);
+    $string_data = substr(
+      $this->html_entities,
+      $data_index_bracket_open + 1,
+      $data_index_bracket_close - $data_index_bracket_open - 1
+    );
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
@@ -109,14 +125,22 @@ class action
     $index_xAxis_begin = strpos($this->html_entities, "xAxis", $index_chart_begin);
     $xAxis_index_bracket_open = strpos($this->html_entities, '[', $index_xAxis_begin);
     $xAxis_index_bracket_close = strpos($this->html_entities, ']', $xAxis_index_bracket_open);
-    $string_xAxis = substr($this->html_entities, $xAxis_index_bracket_open + 1, $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1);
+    $string_xAxis = substr(
+      $this->html_entities,
+      $xAxis_index_bracket_open + 1,
+      $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1
+    );
     $string_xAxis = str_replace('&quot;', '', $string_xAxis);
     $array_xAxis = explode(',', $string_xAxis);
 
     $index_data_begin = strpos($this->html_entities, "data", $index_chart_begin);
     $data_index_bracket_open = strpos($this->html_entities, '[', $index_data_begin);
     $data_index_bracket_close = strpos($this->html_entities, ']', $data_index_bracket_open);
-    $string_data = substr($this->html_entities, $data_index_bracket_open + 1, $data_index_bracket_close - $data_index_bracket_open - 1);
+    $string_data = substr(
+      $this->html_entities,
+      $data_index_bracket_open + 1,
+      $data_index_bracket_close - $data_index_bracket_open - 1
+    );
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
@@ -135,14 +159,22 @@ class action
     $index_xAxis_begin = strpos($this->html_entities, "xAxis", $index_chart_begin);
     $xAxis_index_bracket_open = strpos($this->html_entities, '[', $index_xAxis_begin);
     $xAxis_index_bracket_close = strpos($this->html_entities, ']', $xAxis_index_bracket_open);
-    $string_xAxis = substr($this->html_entities, $xAxis_index_bracket_open + 1, $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1);
+    $string_xAxis = substr(
+      $this->html_entities,
+      $xAxis_index_bracket_open + 1,
+      $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1
+    );
     $string_xAxis = str_replace('&quot;', '', $string_xAxis);
     $array_xAxis = explode(',', $string_xAxis);
 
     $index_data_begin = strpos($this->html_entities, "data", $index_chart_begin);
     $data_index_bracket_open = strpos($this->html_entities, '[', $index_data_begin);
     $data_index_bracket_close = strpos($this->html_entities, ']', $data_index_bracket_open);
-    $string_data = substr($this->html_entities, $data_index_bracket_open + 1, $data_index_bracket_close - $data_index_bracket_open - 1);
+    $string_data = substr(
+      $this->html_entities,
+      $data_index_bracket_open + 1,
+      $data_index_bracket_close - $data_index_bracket_open - 1
+    );
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
@@ -161,14 +193,22 @@ class action
     $index_xAxis_begin = strpos($this->html_entities, "xAxis", $index_chart_begin);
     $xAxis_index_bracket_open = strpos($this->html_entities, '[', $index_xAxis_begin);
     $xAxis_index_bracket_close = strpos($this->html_entities, ']', $xAxis_index_bracket_open);
-    $string_xAxis = substr($this->html_entities, $xAxis_index_bracket_open + 1, $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1);
+    $string_xAxis = substr(
+      $this->html_entities,
+      $xAxis_index_bracket_open + 1,
+      $xAxis_index_bracket_close - $xAxis_index_bracket_open - 1
+    );
     $string_xAxis = str_replace('&quot;', '', $string_xAxis);
     $array_xAxis = explode(',', $string_xAxis);
 
     $index_data_begin = strpos($this->html_entities, "data", $index_chart_begin);
     $data_index_bracket_open = strpos($this->html_entities, '[', $index_data_begin);
     $data_index_bracket_close = strpos($this->html_entities, ']', $data_index_bracket_open);
-    $string_data = substr($this->html_entities, $data_index_bracket_open + 1, $data_index_bracket_close - $data_index_bracket_open - 1);
+    $string_data = substr(
+      $this->html_entities,
+      $data_index_bracket_open + 1,
+      $data_index_bracket_close - $data_index_bracket_open - 1
+    );
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
