@@ -17,14 +17,14 @@ if (isset($_POST['nation'])) {
   if (!file_exists($file_path)) { // file does not exist
     die('file not found');
   } else {
-    header("Content-Disposition: attachment; filename=$file");
+    header("Content-Disposition: attachment; filename=$file_path");
   }
   // $_POST['download_or_see'] == "download"  mean the customer choose 'download'
   if ($_POST['download_or_see'] == "download") {
     readfile($file_path);
     die(file_get_contents($file_path));
   } else { // or they can choose to see on the browser
-    header("Location: http://localhost:7777/json_datas/" . $_SESSION['nation_name'] . ".json");
+    header("Location: " . $_SERVER['HTTP_REFERER'] . "/json_datas/" . $_SESSION['nation_name'] . ".json");
   }
 }
 
