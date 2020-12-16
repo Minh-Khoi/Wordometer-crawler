@@ -1,3 +1,6 @@
+<h2>
+  To load the data of Covid-19 by Nation, you must copy the nation 's name arcodding to the list below:
+</h2>
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
