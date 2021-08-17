@@ -15,6 +15,7 @@ class chart
   {
     $this->title = $title;
     $this->array = array();
+    // var_dump($xAxis);
     for ($i = 0; $i < count($xAxis); $i++) {
       array_push($this->array, array($xAxis[$i] => $data[$i]));
     }

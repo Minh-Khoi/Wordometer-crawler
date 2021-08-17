@@ -1,18 +1,28 @@
 <h2>
-  To load the data of Covid-19 by Nation, you must copy the nation 's name arcodding to the list below:
+  Choose the RIGHT name of Nation, in the text form
 </h2>
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-session_start();
+// session_start();
 
 require_once dirname(__FILE__, 2) . "/model/action.php";
 require_once dirname(__FILE__, 2) . "/model/load_countries_action.php";
 
-$action = new load_countries_action();
+class load_list_countries
+{
+  public $list_countries = [];
 
-$countries_list = $action->get_countries_list('https://www.worldometers.info/coronavirus/#countries');
+  /**
+   * Class constructor.
+   */
+  public function __construct()
+  {
+    $this->action = new load_countries_action();
+    $countries_list = $this->action->get_countries_list('https://www.worldometers.info/coronavirus/#countries');
 
-foreach ($countries_list as $k => $country) {
-  echo "<b>" . $country . "</b><br/>";
+    foreach ($countries_list as $k => $country) {
+      array_push($this->list_countries, $country);
+    }
+  }
 }

@@ -6,6 +6,7 @@ if (session_id() != null) session_id(session_id());
 session_start();
 
 require_once dirname(__FILE__, 1) . "/controller/controller.php";
+require_once dirname(__FILE__, 1) . "/controller/load_list_countries_controller.php";
 require_once dirname(__FILE__, 1) . "/model/action.php";
 
 // isset($_POST['nation']) mean this page is loaded by form submiting 
@@ -38,6 +39,11 @@ if (isset($_POST['nation'])) {
 <!--[if gt IE 8]><!-->
 <html class="no-js">
 <!--<![endif]-->
+<?php
+// SET List Nation for Select>Options Tags
+$loader = new load_list_countries();
+$list_nations = $loader->list_countries;
+?>
 
 <head>
   <meta charset="utf-8">
@@ -55,7 +61,13 @@ if (isset($_POST['nation'])) {
 
   <h1>CHoose a nation</h1>
   <form action="" method="POST">
-    <input type="text" name="nation" id="nation" required /> <br>
+    <input type="text" name="nation" list="nation_name" required />
+    <datalist id="nation_name" require>
+      <?php foreach ($list_nations as $i => $nation) : ?>
+        <option value="<?= $nation; ?>"><?= $nation; ?></option>
+      <?php endforeach; ?>
+    </datalist>
+    <br>
     <input type="radio" name="download_or_see" id="download_or_see" value="download"> Download
     <input type="radio" name="download_or_see" id="download_or_see" value="see"> See Result
     <button>submit</button>
@@ -63,7 +75,7 @@ if (isset($_POST['nation'])) {
     <!-- <? echo phpinfo(); ?> -->
   </form>
 
-  <h3>Click the button below to see the name of Nations, then copy one of them and paste to the form</h3>
+  <h3>Click the RIGHT name of Nations</h3>
   <a href="controller/load_list_countries_controller.php">
     <button>See Nations</button>
   </a>
