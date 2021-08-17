@@ -46,41 +46,41 @@ $list_nations = $loader->list_countries;
 ?>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Worldometer Crawler</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Worldometer Crawler</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
 </head>
 
 <body>
-  <!--[if lt IE 7]>
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-  <h1>CHoose a nation</h1>
-  <form action="" method="POST">
-    <input type="text" name="nation" list="nation_name" required />
-    <datalist id="nation_name" require>
-      <?php foreach ($list_nations as $i => $nation) : ?>
-        <option value="<?= $nation; ?>"><?= $nation; ?></option>
-      <?php endforeach; ?>
-    </datalist>
-    <br>
-    <input type="radio" name="download_or_see" id="download_or_see" value="download"> Download
-    <input type="radio" name="download_or_see" id="download_or_see" value="see"> See Result
-    <button>submit</button>
+    <h1>CHoose a nation</h1>
+    <form action="" method="POST">
+        <input type="text" name="nation" list="nation_name" required />
+        <datalist id="nation_name" require>
+            <?php foreach ($list_nations as $i => $nation) : ?>
+            <option value="<?= $nation; ?>"><?= $nation; ?></option>
+            <?php endforeach; ?>
+        </datalist>
+        <br>
+        <input type="radio" name="download_or_see" id="download_or_see" value="download"> Download
+        <input type="radio" name="download_or_see" id="download_or_see" value="see"> See Result
+        <button>submit</button>
 
-    <!-- <? echo phpinfo(); ?> -->
-  </form>
+        <!-- <? echo phpinfo(); ?> -->
+    </form>
 
-  <h3>Click the RIGHT name of Nations</h3>
+    <!-- <h3>Click s</h3>
   <a href="controller/load_list_countries_controller.php">
     <button>See Nations</button>
-  </a>
+  </a> -->
 
-  <script src="" async defer></script>
+    <script src="" async defer></script>
 </body>
 
 </html>
