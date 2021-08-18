@@ -1,1 +1,1 @@
-git push https://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@github.com/Minh-Khoi/Wordometer-crawler.git
+git push https://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@github.com/Minh-Khoi/Wordometer-crawler.git

@@ -77,7 +77,7 @@ class action
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
-    $this->data_ncov->chart_case = $chart;
+    $this->data_ncov->case = $chart;
     // print_r('<pre>');
     // // var_dump($chart);
     // echo (json_encode($chart));
@@ -112,7 +112,7 @@ class action
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
-    $this->data_ncov->chart_new_case = $chart;
+    $this->data_ncov->new_case = $chart;
     // print_r('<pre>');
     // var_dump($chart);
     // // echo (json_encode($chart));
@@ -147,7 +147,7 @@ class action
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
-    $this->data_ncov->chart_active_case = $chart;
+    $this->data_ncov->active_case = $chart;
     // print_r('<pre>');
     // var_dump($chart);
     // // echo (json_encode($chart));
@@ -182,7 +182,7 @@ class action
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
-    $this->data_ncov->chart_death = $chart;
+    $this->data_ncov->death = $chart;
     // print_r('<pre>');
     // var_dump($chart);
     // // echo (json_encode($chart));
@@ -218,7 +218,7 @@ class action
     $array_data = explode(',', $string_data);
 
     $chart = new chart($title, $array_xAxis, $array_data);
-    $this->data_ncov->chart_new_death = $chart;
+    $this->data_ncov->new_death = $chart;
     // print_r('<pre>');
     // var_dump($chart);
     // // echo (json_encode($chart));

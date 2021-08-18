@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-/** THis is for data crawled from chart */
+/** THis class handle datas crawled from chart (on worldometer website) */
 class chart
 {
   public $title, $array;
