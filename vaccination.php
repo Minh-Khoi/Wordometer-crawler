@@ -15,7 +15,6 @@
     //(if isset($_POST['nation']) == false ) this page is loaded by URL
 
     if (isset($_POST['nation'])) {
-        // echo "ddit me may";
         $controller = new controller($_POST["nation"], $raw_data_vaccination);
         $controller->generate_json_file(true);
         $file_path = dirname(__FILE__) . ("/json_datas/" . $_SESSION['nation_name'] . "_vaccination.json");
@@ -28,7 +27,6 @@
         // $_POST['download_or_see'] == "download"  mean the customer choose 'download'
         if ($_POST['download_or_see'] == "download") {
             // die($file_path);
-            var_dump("fuck u 0");
             readfile($file_path);
             die();
         } else { // or they can choose to see on the browser
@@ -52,7 +50,9 @@
     </head>
 
     <body>
-
+        <h2>
+            Choose the RIGHT name of Nation, To receive Covid-19 vaccinations data
+        </h2>
         <?
         $loader = new load_list_countries(true, $raw_data_vaccination);
         $list_nations = $loader->list_countries;

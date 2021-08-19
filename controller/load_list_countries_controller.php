@@ -1,6 +1,4 @@
-<h2>
-    Choose the RIGHT name of Nation, in the text form
-</h2>
+
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
